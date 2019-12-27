@@ -21,8 +21,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.rest.java.dto.DoctorDto;
+import com.rest.java.dto.HospitalDto;
 import com.rest.java.dto.PatientDto;
 import com.rest.java.service.DoctorService;
+import com.rest.java.service.HospitalService;
 import com.rest.java.service.PatientService;
 import com.rest.java.view.PatientPdfDocumentView;
 
@@ -36,6 +38,9 @@ public class PatientController {
 
 	@Autowired
 	private DoctorService doctorService;
+	
+	@Autowired
+	private HospitalService hospitalService;
 	
 	@PostMapping("/addPatient")
 	public ResponseEntity<PatientDto> addPatient(@RequestBody PatientDto dto) {
@@ -72,9 +77,9 @@ public class PatientController {
 	  pdfView(@PathVariable int id) throws IOException {
 	  
 	  PatientDto patient = service.getOnePatient(id); 
-	  //HospitalDto hospital=hospitalService.getHospitalById(patient.getHospId());
+	  HospitalDto hospital=hospitalService.getHospitalById(1);
 	  DoctorDto doctor=doctorService.getOneDoctorById(patient.getDrId());
-	  ByteArrayInputStream bis = PatientPdfDocumentView.patientPdfReport(patient, doctor); 
+	  ByteArrayInputStream bis = PatientPdfDocumentView.patientPdfReport(patient, doctor, hospital); 
 	  HttpHeaders headers = new HttpHeaders();
 	  headers.add("Content-Disposition", "inline; filename=patient.pdf"); return
 	  ResponseEntity.ok() .headers(headers) .contentType(MediaType.APPLICATION_PDF)

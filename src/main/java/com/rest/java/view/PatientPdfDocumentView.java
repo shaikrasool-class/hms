@@ -18,11 +18,12 @@ import com.itextpdf.text.pdf.Barcode128;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.itextpdf.text.pdf.draw.LineSeparator;
 import com.rest.java.dto.DoctorDto;
+import com.rest.java.dto.HospitalDto;
 import com.rest.java.dto.PatientDto;
 
 public class PatientPdfDocumentView {
 
-	public static ByteArrayInputStream patientPdfReport(PatientDto patient, DoctorDto doctor) {
+	public static ByteArrayInputStream patientPdfReport(PatientDto patient, DoctorDto doctor, HospitalDto hospital) {
 
 		Document document = new Document();
 		ByteArrayOutputStream out = new ByteArrayOutputStream();
@@ -31,7 +32,7 @@ public class PatientPdfDocumentView {
 			PdfWriter writer=PdfWriter.getInstance(document, out);
 			document.open();
 			Font font = FontFactory.getFont(FontFactory.TIMES_BOLDITALIC, 18, BaseColor.DARK_GRAY);
-			Paragraph para = new Paragraph(  " Hospital Management System", font);
+			Paragraph para = new Paragraph( hospital.getName()+ " Hospital", font);
 			para.setAlignment(Element.ALIGN_CENTER);
 			document.add(para);
 			Chunk linebreak = new Chunk(new LineSeparator());
