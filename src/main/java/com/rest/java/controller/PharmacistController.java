@@ -26,7 +26,6 @@ public class PharmacistController {
 	@Autowired
 	private PharmacistService pharmacistService;
 	
-	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping("/savePharmacist")
 	public ResponseEntity<PharmacistDto> addPharmacist(@RequestBody PharmacistDto dto){
 		PharmacistDto pharmacistDto=pharmacistService.addPharmacist(dto);
@@ -34,25 +33,21 @@ public class PharmacistController {
 		
 	}
 	
-	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/pharmacistId/{phId}")
 	public ResponseEntity<PharmacistDto> getOnePharmacistById(@PathVariable Integer phId){
 		PharmacistDto pharmacistDto=pharmacistService.getOnePharmacist(phId);
 		return new ResponseEntity<PharmacistDto>(pharmacistDto, HttpStatus.OK);
 	}
-	@CrossOrigin(origins = "http://localhost:4200")
 	@PutMapping("/updatePharmacist")
 	public ResponseEntity<PharmacistDto> updatePharmacist(@RequestBody PharmacistDto dto){
 		PharmacistDto pharmacistDto=pharmacistService.updatePharmacist(dto);
 		return new ResponseEntity<PharmacistDto>(pharmacistDto, HttpStatus.OK);
 	}
-	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/allPharmacist")
 	public ResponseEntity<List<PharmacistDto>> getAllPharmacists(){
 		List<PharmacistDto> dtos=pharmacistService.getAllPharmacist();
 		return new ResponseEntity<List<PharmacistDto>>(dtos, HttpStatus.OK);
 	}
-	@CrossOrigin(origins = "http://localhost:4200")
 	@DeleteMapping("/pharmacistId/{phId}")
 	public ResponseEntity<PharmacistDto> deletePharmacist(@PathVariable Integer phId){
 		PharmacistDto dto=pharmacistService.deletePharmacist(phId);

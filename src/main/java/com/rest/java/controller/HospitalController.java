@@ -49,7 +49,7 @@ public class HospitalController {
 	 * @return returns the HospitalDto
 	 */
 
-	@CrossOrigin(origins = "http://localhost:4200")
+
 	@PostMapping("/addHospital")
 	public ResponseEntity<HospitalDto> addHospital(@Valid @RequestBody HospitalDto dto) {
 
@@ -69,7 +69,7 @@ public class HospitalController {
 	 * @param id
 	 * @return Response contains Hospital information.
 	 */
-	@SuppressWarnings("unused")
+
 	@GetMapping(value = "/hospitalId/{id}")
 	public ResponseEntity<HospitalDto> getOneHospital(@PathVariable("id") int id) {
 
@@ -90,7 +90,6 @@ public class HospitalController {
 	 * @param id
 	 * @return Response will return hospital
 	 */
-	@CrossOrigin(origins = "http://localhost:4200")
 	@DeleteMapping("/deleteHospital/{id}")
 	public ResponseEntity<HospitalDto> deleteHospitalById(@PathVariable("id") int id) {
 
@@ -110,7 +109,6 @@ public class HospitalController {
 	 * @return return the list of hospitals
 	 */
 
-	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/allHospitals")
 	public ResponseEntity<List<HospitalDto>> getAllHospitals() {
 
@@ -138,7 +136,7 @@ public class HospitalController {
 	 * @param dto
 	 * @return returns the updated HospitalDto
 	 */
-	@CrossOrigin(origins = "http://localhost:4200")
+	
 	@PutMapping("updateHospital")
 	public ResponseEntity<HospitalDto> updateHospital(@Valid @RequestBody HospitalDto dto) {
 		HospitalDto hospital = service.updateHospital(dto);

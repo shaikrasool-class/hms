@@ -9,11 +9,13 @@
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/entity/Patient.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/dao/impl/BedDaoImpl.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/service/DoctorService.java
+/home/rasool/workspace/hospital-application/src/main/java/com/rest/java/dao/BloodDonorDao.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/controller/AccountantController.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/ServletInitializer.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/entity/Nurse.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/controller/PharmacistController.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/controller/AdminController.java
+/home/rasool/workspace/hospital-application/src/main/java/com/rest/java/entity/BloodDonor.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/exception/FileNotFoundException.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/view/PatientPdfDocumentView.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/entity/Pharmacist.java
@@ -31,8 +33,10 @@
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/controller/PatientController.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/dao/impl/PatientDaoImpl.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/dao/impl/LaboratoristDaoImpl.java
+/home/rasool/workspace/hospital-application/src/main/java/com/rest/java/service/impl/BloodDonorServiceImpl.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/dto/LaboratoristDto.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/controller/NurseController.java
+/home/rasool/workspace/hospital-application/src/main/java/com/rest/java/config/CorsMappings.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/dao/HospitalDao.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/service/impl/BedAllotmentServiceImpl.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/dao/AdminDao.java
@@ -44,6 +48,7 @@
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/controller/ReciptionistController.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/entity/Bed.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/dao/impl/BedAllotmentDaoImpl.java
+/home/rasool/workspace/hospital-application/src/main/java/com/rest/java/dao/impl/BloodDonorDaoImpl.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/dao/BedDao.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/service/NurseService.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/entity/Admin.java
@@ -66,7 +71,9 @@
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/util/Response.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/service/BedAllotmentService.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/dto/AccountantDto.java
+/home/rasool/workspace/hospital-application/src/main/java/com/rest/java/controller/BloodDonorController.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/HospitalApplication.java
+/home/rasool/workspace/hospital-application/src/main/java/com/rest/java/service/BloodDonorService.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/dto/PatientDto.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/service/LaboratoristService.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/service/impl/NurseServiceImpl.java
@@ -84,5 +91,6 @@
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/service/impl/LaboratoristServiceImpl.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/entity/Laboratorist.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/dao/impl/NurseDaoImpl.java
+/home/rasool/workspace/hospital-application/src/main/java/com/rest/java/dto/BloodDonorDto.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/dto/BedDto.java
 /home/rasool/workspace/hospital-application/src/main/java/com/rest/java/dao/PatientDao.java

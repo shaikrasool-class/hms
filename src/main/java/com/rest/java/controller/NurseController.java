@@ -20,7 +20,6 @@ import com.rest.java.service.NurseService;
 
 @RestController
 @RequestMapping("nurse")
-@CrossOrigin(origins = "http://localhost:4200", allowedHeaders = "*")
 public class NurseController {
 
 	@Autowired

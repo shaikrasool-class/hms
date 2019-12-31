@@ -20,7 +20,6 @@ import com.rest.java.service.BedService;
 
 @RestController
 @RequestMapping("/bed")
-@CrossOrigin(origins = "http://localhost:4200")
 public class BedController {
 
 	

@@ -29,9 +29,6 @@ public class DoctorController {
 	@Autowired
 	private DoctorService service;
 	
-
-
-	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping("/saveDoctor")
 	public ResponseEntity<DoctorDto> saveDoctor(@Valid @RequestBody DoctorDto dto) {
 		DoctorDto doctor = service.addDoctor(dto);
@@ -39,28 +36,24 @@ public class DoctorController {
 
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/allDoctors")
 	public ResponseEntity<List<DoctorDto>> getAllDoctors() {
 		List<DoctorDto> doctors = service.getAllDoctors();
 		return new ResponseEntity<List<DoctorDto>>(doctors, HttpStatus.OK);
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
 	@PutMapping("/updateDoctor")
 	public ResponseEntity<DoctorDto> updateDoctor(@RequestBody DoctorDto dto) {
 		DoctorDto doctor = service.updateDoctor(dto);
 		return new ResponseEntity<DoctorDto>(doctor, HttpStatus.OK);
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
 	@DeleteMapping("/deleteDoctor/{id}")
 	public ResponseEntity<DoctorDto> deleteDoctor(@PathVariable int id) {
 		DoctorDto doctor = service.deleteDoctor(id);
 		return new ResponseEntity<DoctorDto>(doctor, HttpStatus.OK);
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/doctorId/{id}")
 	public ResponseEntity<DoctorDto> getOneDoctor(@PathVariable int id) {
 		DoctorDto doctor = service.getOneDoctorById(id);

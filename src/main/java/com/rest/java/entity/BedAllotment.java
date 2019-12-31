@@ -6,13 +6,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
 
 @Entity
-@Table(name = "bed_allotment")
 public class BedAllotment {
 
 	@Id
@@ -22,6 +20,10 @@ public class BedAllotment {
 
 	private String bedNumber;
 	
+	private String patientName;
+	
+
+
 	@DateTimeFormat(iso=ISO.DATE)
 	private Date allotmentDate;
 	
@@ -61,7 +63,12 @@ public class BedAllotment {
 	}
 	
 	
-	
+	public String getPatientName() {
+		return patientName;
+	}
 
+	public void setPatientName(String patientName) {
+		this.patientName = patientName;
+	}
 
 }

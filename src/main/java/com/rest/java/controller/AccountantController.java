@@ -5,7 +5,6 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,35 +24,30 @@ public class AccountantController {
 	@Autowired
 	private AccountantService AccountantService;
 
-	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping("/addAccountant")
 	public ResponseEntity<AccountantDto> AddAccountant(@RequestBody AccountantDto dto){
 		AccountantDto Accountant=AccountantService.addAccountant(dto);
 		return new ResponseEntity<AccountantDto>(Accountant, HttpStatus.OK);
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
 	@PutMapping("/updateAccountant")
 	public ResponseEntity<AccountantDto> updateAccountant(@RequestBody AccountantDto dto){
 		AccountantDto Accountant=AccountantService.updateAccountant(dto);
 		return new ResponseEntity<AccountantDto>(Accountant, HttpStatus.OK);
 	}
 	
-	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/accountantId/{acId}")
 	public ResponseEntity<AccountantDto> getOneAccountant(@PathVariable Integer acId){
 		AccountantDto Accountant=AccountantService.getOneAccountant(acId);
 		return new ResponseEntity<AccountantDto>(Accountant, HttpStatus.OK);
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
 	@DeleteMapping("/accountantId/{acId}")
 	public ResponseEntity<AccountantDto> deleteAccountant(@PathVariable Integer acId){
 		AccountantDto Accountant=AccountantService.deleteAccountant(acId);
 		return new ResponseEntity<AccountantDto>(Accountant, HttpStatus.OK);
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/allAccountant")
 	public ResponseEntity<List<AccountantDto>> getAll(){
 		List<AccountantDto> dto=AccountantService.getAllAccountant();

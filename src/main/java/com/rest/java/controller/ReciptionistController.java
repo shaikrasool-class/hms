@@ -25,35 +25,30 @@ public class ReciptionistController {
 	@Autowired
 	private ReciptionistService reciptionistService;
 
-	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping("/addReciptionist")
 	public ResponseEntity<ReciptionistDto> AddReciptionist(@RequestBody ReciptionistDto dto){
 		ReciptionistDto reciptionist=reciptionistService.addReciptionist(dto);
 		return new ResponseEntity<ReciptionistDto>(reciptionist, HttpStatus.OK);
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
 	@PutMapping("/updateReciptionist")
 	public ResponseEntity<ReciptionistDto> updateReciptionist(@RequestBody ReciptionistDto dto){
 		ReciptionistDto reciptionist=reciptionistService.updateReciptionist(dto);
 		return new ResponseEntity<ReciptionistDto>(reciptionist, HttpStatus.OK);
 	}
 	
-	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/reciptionistId/{acId}")
 	public ResponseEntity<ReciptionistDto> getOneReciptionist(@PathVariable Integer recpId){
 		ReciptionistDto reciptionist=reciptionistService.getOneReciptionist(recpId);
 		return new ResponseEntity<ReciptionistDto>(reciptionist, HttpStatus.OK);
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
 	@DeleteMapping("/reciptionistId/{acId}")
 	public ResponseEntity<ReciptionistDto> deleteReciptionist(@PathVariable Integer recpId){
 		ReciptionistDto reciptionist=reciptionistService.deleteReciptionist(recpId);
 		return new ResponseEntity<ReciptionistDto>(reciptionist, HttpStatus.OK);
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/allReciptionist")
 	public ResponseEntity<List<ReciptionistDto>> getAll(){
 		List<ReciptionistDto> dto=reciptionistService.getAllReciptionist();

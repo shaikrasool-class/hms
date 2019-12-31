@@ -10,7 +10,7 @@ public class BedDto {
 	
 	private String ward;
 	
-	private int bedNumber;
+	private String bedNumber;
 	
 	private String bedType;
 	
@@ -48,13 +48,14 @@ public class BedDto {
 		this.description = description;
 	}
 
-	public int getBedNumber() {
+	public String getBedNumber() {
 		return bedNumber;
 	}
 
-	public void setBedNumber(int bedNumber) {
+	public void setBedNumber(String bedNumber) {
 		this.bedNumber = bedNumber;
 	}
+
 	
 	
 	

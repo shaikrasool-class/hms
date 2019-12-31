@@ -12,11 +12,15 @@ public class BedAllotmentDto {
 	
 	private Date dischargeDate;
 	
-	
-	
-	
+	private String patientName;
 	
 
+	public String getPatientName() {
+		return patientName;
+	}
+	public void setPatientName(String patientName) {
+		this.patientName = patientName;
+	}
 	public int getBedId() {
 		return bedId;
 	}

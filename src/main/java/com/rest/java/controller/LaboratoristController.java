@@ -25,35 +25,30 @@ public class LaboratoristController {
 	@Autowired
 	private LaboratoristService laboratoristService;
 
-	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping("/addLaboratorist")
 	public ResponseEntity<LaboratoristDto> AddLaboratorist(@RequestBody LaboratoristDto dto){
 		LaboratoristDto laboratorist=laboratoristService.addLaboratorist(dto);
 		return new ResponseEntity<LaboratoristDto>(laboratorist, HttpStatus.OK);
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
 	@PutMapping("/updateLaboratorist")
 	public ResponseEntity<LaboratoristDto> updateLaboratorist(@RequestBody LaboratoristDto dto){
 		LaboratoristDto laboratorist=laboratoristService.updateLaboratorist(dto);
 		return new ResponseEntity<LaboratoristDto>(laboratorist, HttpStatus.OK);
 	}
 	
-	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/LaboratoristId/{labId}")
 	public ResponseEntity<LaboratoristDto> getOneLaboratorist(@PathVariable Integer labId){
 		LaboratoristDto laboratorist=laboratoristService.getOneLaboratorist(labId);
 		return new ResponseEntity<LaboratoristDto>(laboratorist, HttpStatus.OK);
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
 	@DeleteMapping("/LaboratoristId/{labId}")
 	public ResponseEntity<LaboratoristDto> deleteLaboratorist(@PathVariable Integer labId){
 		LaboratoristDto laboratorist=laboratoristService.deleteLaboratoristy(labId);
 		return new ResponseEntity<LaboratoristDto>(laboratorist, HttpStatus.OK);
 	}
 
-	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/allLaboratorist")
 	public ResponseEntity<List<LaboratoristDto>> getAll(){
 		List<LaboratoristDto> dto=laboratoristService.getAllLaboratorist();

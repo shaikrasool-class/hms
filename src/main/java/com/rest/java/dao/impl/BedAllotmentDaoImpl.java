@@ -64,7 +64,7 @@ public class BedAllotmentDaoImpl implements BedAllotmentDao {
 	@Override
 	public List<BedAllotment> getAllBedAllotments() {
 		Session session=sf.openSession();
-		String AllBeds="From bed_allotment";
+		String AllBeds="From BedAllotment";
 		Query query=session.createQuery(AllBeds);
 		return query.list();
 	}

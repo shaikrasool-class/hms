@@ -22,7 +22,7 @@ public class Bed {
 
 	private String description;
 
-	private int bedNumber;
+	private String bedNumber;
 	
 	public int getBed_Id() {
 		return bed_Id;
@@ -55,14 +55,16 @@ public class Bed {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
-	
-	public int getBedNumber() {
+
+	public String getBedNumber() {
 		return bedNumber;
 	}
 
-	public void setBedNumber(int bedNumber) {
+	public void setBedNumber(String bedNumber) {
 		this.bedNumber = bedNumber;
 	}
+	
+	
+
 	
 }

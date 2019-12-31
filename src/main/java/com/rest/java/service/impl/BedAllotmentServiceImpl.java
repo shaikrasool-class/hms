@@ -75,6 +75,7 @@ public class BedAllotmentServiceImpl implements BedAllotmentService {
 		BedAllotment entity = new BedAllotment();
 		entity.setBedId(dto.getBedId());
 		entity.setBedNumber(dto.getBedNumber());
+		entity.setPatientName(dto.getPatientName());
 		entity.setAllotmentDate(dto.getAllotmentDate());
 		entity.setDischargeDate(dto.getDischargeDate());
 		return entity;
@@ -85,8 +86,9 @@ public class BedAllotmentServiceImpl implements BedAllotmentService {
 		BedAllotmentDto dto = new BedAllotmentDto();
 		dto.setBedId(entity.getBedId());
 		dto.setBedNumber(entity.getBedNumber());
+		dto.setPatientName(entity.getPatientName());
 		dto.setAllotmentDate(entity.getAllotmentDate());
-		dto.setDischargeDate(dto.getDischargeDate());
+		dto.setDischargeDate(entity.getDischargeDate());
 		return dto;
 	}
 

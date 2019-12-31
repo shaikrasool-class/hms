@@ -30,7 +30,6 @@ import com.rest.java.view.PatientPdfDocumentView;
 
 @RestController
 @RequestMapping("/patient")
-@CrossOrigin(origins = "http://localhost:4200")
 public class PatientController {
 
 	@Autowired
@@ -38,10 +37,10 @@ public class PatientController {
 
 	@Autowired
 	private DoctorService doctorService;
-	
+
 	@Autowired
 	private HospitalService hospitalService;
-	
+
 	@PostMapping("/addPatient")
 	public ResponseEntity<PatientDto> addPatient(@RequestBody PatientDto dto) {
 		PatientDto patient = service.addPatient(dto);
@@ -72,20 +71,24 @@ public class PatientController {
 		return new ResponseEntity<PatientDto>(patient, HttpStatus.OK);
 	}
 
-	
-	  @GetMapping("/pdf/{id}") public ResponseEntity<InputStreamResource>
-	  pdfView(@PathVariable int id) throws IOException {
-	  
-	  PatientDto patient = service.getOnePatient(id); 
-	  HospitalDto hospital=hospitalService.getHospitalById(1);
-	  DoctorDto doctor=doctorService.getOneDoctorById(patient.getDrId());
-	  ByteArrayInputStream bis = PatientPdfDocumentView.patientPdfReport(patient, doctor, hospital); 
-	  HttpHeaders headers = new HttpHeaders();
-	  headers.add("Content-Disposition", "inline; filename=patient.pdf"); return
-	  ResponseEntity.ok() .headers(headers) .contentType(MediaType.APPLICATION_PDF)
-	  .body(new InputStreamResource(bis));
-	  
-	  }
-	 
+	@GetMapping("/pdf/{id}")
+	public ResponseEntity<InputStreamResource> pdfView(@PathVariable int id) throws IOException {
+
+		PatientDto patient = service.getOnePatient(id);
+
+		HospitalDto hospital = hospitalService.getHospitalById(1);
+
+		DoctorDto doctor = doctorService.getOneDoctorById(patient.getDrId());
+
+		ByteArrayInputStream bis = PatientPdfDocumentView.patientPdfReport(patient, doctor, hospital);
+
+		HttpHeaders headers = new HttpHeaders();
+
+		headers.add("Content-Disposition", "inline; filename=patient.pdf");
+
+		return ResponseEntity.ok().headers(headers).contentType(MediaType.APPLICATION_PDF)
+				.body(new InputStreamResource(bis));
+
+	}
 
 }

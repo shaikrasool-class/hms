@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -41,7 +42,7 @@ public class BedAllotmentController {
 		return new ResponseEntity<BedAllotmentDto>(bed, HttpStatus.OK);
 	}
 	
-	@DeleteMapping("/bed/{bedId}")
+	@DeleteMapping("/deletedBed/{bedId}")
 	public ResponseEntity<BedAllotmentDto> deleteBedAllotment(@PathVariable Integer bedId){
 		BedAllotmentDto bed= bedAllotmentService.deletBedAllotment(bedId);
 		return new ResponseEntity<BedAllotmentDto>(bed, HttpStatus.OK);

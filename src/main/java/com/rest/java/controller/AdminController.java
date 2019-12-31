@@ -24,26 +24,22 @@ public class AdminController {
 	@Autowired
 	private AdminService service;
 	
-	@CrossOrigin(origins = "http://localhost:4200")
 	@PostMapping("/saveAdmin")
 	public ResponseEntity<AdminDto> saveAdmin(@RequestBody AdminDto dto){
 		AdminDto adminDto=service.addAdmin(dto);
 		return new ResponseEntity<AdminDto>(adminDto, HttpStatus.OK);
 	}
-	@CrossOrigin(origins = "http://localhost:4200")
 	@PutMapping("/updateAdmin")
 	public ResponseEntity<AdminDto> updateAdmin(@RequestBody AdminDto dto){
 		AdminDto admin=service.updateAdmin(dto);
 			return new ResponseEntity<AdminDto>(admin, HttpStatus.OK);
 			
 	}
-	@CrossOrigin(origins = "http://localhost:4200")
 	@GetMapping("/allAdmins")
 	public ResponseEntity<List<AdminDto>> getAllAdmins(){
 		List<AdminDto> dtos=service.getAllAdmins();
 		return new ResponseEntity<List<AdminDto>>(dtos, HttpStatus.OK);
 	}
-	@CrossOrigin(origins= "http://localhost:4200")
 	@GetMapping("/adminId/{id}")
 	public ResponseEntity<AdminDto> getOneAdmin(@PathVariable int id ){
 		AdminDto admin=service.getAdminById(id);

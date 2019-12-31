@@ -13,8 +13,7 @@ import com.itextpdf.text.Font;
 import com.itextpdf.text.FontFactory;
 import com.itextpdf.text.Image;
 import com.itextpdf.text.Paragraph;
-import com.itextpdf.text.pdf.Barcode;
-import com.itextpdf.text.pdf.Barcode128;
+import com.itextpdf.text.pdf.BarcodeQRCode;
 import com.itextpdf.text.pdf.PdfWriter;
 import com.itextpdf.text.pdf.draw.LineSeparator;
 import com.rest.java.dto.DoctorDto;
@@ -68,17 +67,19 @@ public class PatientPdfDocumentView {
 			document.add(linebreak);
 			document.add(new Paragraph(new Date().toString()));
 			
-			  Barcode128 barcode128 = new Barcode128(); 
-			  barcode128.setCode(patient.getName());
-			  barcode128.setCodeType(Barcode.CODE128); Image code128Image =
-			  barcode128.createImageWithBarcode(writer.getDirectContent(), null, null);
-			  document.add(code128Image);
-			 
 			/*
-			 * BarcodeQRCode barcodeQRCode = new BarcodeQRCode("Rasool:) Happy New Year",
-			 * 1000, 1000, null); Image codeQrImage = barcodeQRCode.getImage();
-			 * codeQrImage.scaleAbsolute(100, 100); document.add(codeQrImage);
+			 * Barcode128 barcode128 = new Barcode128();
+			 * barcode128.setCode(patient.getName());
+			 * barcode128.setCodeType(Barcode.CODE128); Image code128Image =
+			 * barcode128.createImageWithBarcode(writer.getDirectContent(), null, null);
+			 * document.add(code128Image);
 			 */
+			 
+			
+			  BarcodeQRCode barcodeQRCode = new BarcodeQRCode("Muhammed Hashir:) The New Year is here! Look ahead, embark on the road to success. May you have a great journey to your destination! Happy 2020.",
+			  1000, 1000, null); Image codeQrImage = barcodeQRCode.getImage();
+			  codeQrImage.scaleAbsolute(100, 100); document.add(codeQrImage);
+			 
 			document.close();
 		} catch (DocumentException e) {
 			e.printStackTrace();
