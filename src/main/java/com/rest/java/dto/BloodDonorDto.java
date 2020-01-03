@@ -1,6 +1,6 @@
 package com.rest.java.dto;
 
-import java.util.Date;
+import java.sql.Date;
 
 public class BloodDonorDto {
 

@@ -1,5 +1,5 @@
 package com.rest.java.config;
-/*
+
 import java.util.List;
 
 import org.springframework.context.annotation.Configuration;
@@ -139,4 +139,3 @@ public class CorsMappings implements WebMvcConfigurer {
 		return null;
 	}
 }
-*/

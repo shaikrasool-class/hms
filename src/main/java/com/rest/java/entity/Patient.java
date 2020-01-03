@@ -34,12 +34,14 @@ public class Patient implements Serializable {
 	private String address;
 	
 	private int phone;
+	
 	@DateTimeFormat(iso=ISO.DATE)
 	private Date dateOfBirth;
 	
 	private int age;
 	
 	private String bloodGroup;
+	
 	@DateTimeFormat(iso=ISO.DATE)
     private Date admitDate;
 	

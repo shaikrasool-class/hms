@@ -123,6 +123,7 @@ public class DoctorServiceImpl implements DoctorService {
 		dto.setPhone(entity.getPhone());
 		dto.setDeparment(entity.getDeparment());
 		dto.setAddress(entity.getAddress());
+		
 		List<Patient> patient = entity.getPatientsList();
 
 		if (patient != null && patient.size() > 0) {

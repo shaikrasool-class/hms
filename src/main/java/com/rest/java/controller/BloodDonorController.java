@@ -47,11 +47,11 @@ public class BloodDonorController {
 		BloodDonorDto bloodDonor=bloodDonorService.deletBloodDonorById(donorId);
 		return new ResponseEntity<BloodDonorDto>(bloodDonor, HttpStatus.OK);
 	}
-	
 	@GetMapping("/getAllDonors")
-	public ResponseEntity<List<BloodDonorDto>> getAllBloodDonors(){
-		List<BloodDonorDto> donors=bloodDonorService.getALlDonors();
-		return new ResponseEntity<List<BloodDonorDto>>(donors, HttpStatus.OK);
+	public ResponseEntity<List<BloodDonorDto>> getAll(){
+		List<BloodDonorDto> dto=bloodDonorService.getALlDonors();
+		return new ResponseEntity<List<BloodDonorDto>>(dto, HttpStatus.OK);
+		
 	}
 	
 }

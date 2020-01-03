@@ -66,11 +66,10 @@ public class BloodDonorServiceImpl implements BloodDonorService{
 			if(donorsList !=null) {
 				dtos=new ArrayList<BloodDonorDto>();
 				while(donorsList.hasNext()) {
-					
+					dtos.add(mapEntityToDto(donorsList.next()));
 				}
 			}
-			
-		return null;
+		return dtos;
 	}
 
 	@Override
@@ -82,7 +81,6 @@ public class BloodDonorServiceImpl implements BloodDonorService{
 		entity.setGender(dto.getGender());
 		entity.setAddress(dto.getAddress());
 		entity.setPhone(dto.getPhone());
-		entity.setGender(dto.getGender());
 		entity.setAge(dto.getAge());
 		entity.setBloodgroup(dto.getBloodgroup());
 		entity.setDate(dto.getDate());
@@ -96,9 +94,8 @@ public class BloodDonorServiceImpl implements BloodDonorService{
 		dto.setName(entity.getName());
 		dto.setEmail(entity.getEmail());
 		dto.setGender(entity.getGender());
-		dto.setAddress(entity.getGender());
+		dto.setAddress(entity.getAddress());
 		dto.setPhone(entity.getPhone());
-		dto.setGender(entity.getGender());
 		dto.setAge(entity.getAge());
 		dto.setBloodgroup(entity.getBloodgroup());
 		dto.setDate(entity.getDate());
