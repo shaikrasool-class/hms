@@ -16,4 +16,5 @@ public interface DoctorDao {
 	public Doctor deleteDoctorById(Integer id);
 	
 	public List<Doctor> getAllDoctors();
+	
 }

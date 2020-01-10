@@ -1,6 +1,7 @@
 package com.rest.java.service.impl;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
@@ -9,7 +10,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.rest.java.dao.DoctorDao;
-import com.rest.java.dao.PatientDao;
 import com.rest.java.dto.DoctorDto;
 import com.rest.java.dto.PatientDto;
 import com.rest.java.entity.Doctor;
@@ -21,9 +21,7 @@ public class DoctorServiceImpl implements DoctorService {
 
 	@Autowired
 	private DoctorDao dao;
-	
-	@Autowired
-	private PatientDao patientDao;
+
 
 	@Override
 	public DoctorDto addDoctor(DoctorDto dto) {
@@ -77,6 +75,10 @@ public class DoctorServiceImpl implements DoctorService {
 		return dtos;
 	}
 
+	
+	
+	
+	
 	public List<DoctorDto> mapEntitiesToDto(Iterator<Doctor> doctorsList) {
 		List<DoctorDto> doctordtos = null;
 
@@ -100,7 +102,9 @@ public class DoctorServiceImpl implements DoctorService {
 		entity.setPhone(dto.getPhone());
 		entity.setDeparment(dto.getDeparment());
 		entity.setAddress(dto.getAddress());
-
+		entity.setFileName(dto.getFileName());
+		entity.setMimetype(dto.getMimetype());
+		entity.setPic(dto.getPic());
 		List<PatientDto> patientDtos = dto.getPntDtos();
 
 		if (patientDtos != null && patientDtos.size() > 0) {
@@ -123,7 +127,9 @@ public class DoctorServiceImpl implements DoctorService {
 		dto.setPhone(entity.getPhone());
 		dto.setDeparment(entity.getDeparment());
 		dto.setAddress(entity.getAddress());
-		
+		dto.setMimetype(entity.getMimetype());
+		dto.setPic(entity.getPic());
+		dto.setFileName(entity.getFileName());
 		List<Patient> patient = entity.getPatientsList();
 
 		if (patient != null && patient.size() > 0) {

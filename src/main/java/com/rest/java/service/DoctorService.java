@@ -17,4 +17,5 @@ public interface DoctorService extends BaseDao<DoctorDto, Doctor>{
 	public DoctorDto deleteDoctor(Integer id);
 	
 	public List<DoctorDto> getAllDoctors();
+	
 }

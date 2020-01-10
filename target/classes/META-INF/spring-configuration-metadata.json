@@ -1,0 +1,17 @@
+{
+  "hints": [],
+  "groups": [
+    {
+      "sourceType": "com.rest.java.util.FileStorageProperties",
+      "name": "file",
+      "type": "com.rest.java.util.FileStorageProperties"
+    }
+  ],
+  "properties": [
+    {
+      "sourceType": "com.rest.java.util.FileStorageProperties",
+      "name": "file.upload-dir",
+      "type": "java.lang.String"
+    }
+  ]
+}

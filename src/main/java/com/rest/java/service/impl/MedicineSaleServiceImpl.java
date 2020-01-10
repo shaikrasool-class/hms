@@ -96,7 +96,7 @@ public class MedicineSaleServiceImpl implements MedicineSaleService {
 		dto.setMed_Id(entity.getMed_Id());
 		dto.setPatientName(entity.getPatientName());
 		dto.setPrice(entity.getPrice());
-
+ 
 		List<Medicine> medicine = entity.getMedicines();
 
 		if (medicine != null && medicine.size() > 0) {

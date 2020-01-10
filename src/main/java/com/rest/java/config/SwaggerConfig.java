@@ -4,6 +4,9 @@ import java.util.ArrayList;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.config.annotation.CorsRegistry;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -46,4 +49,19 @@ public class SwaggerConfig {
 	              "Apache 2.0", "http://www.apache.org/licenses/LICENSE-2.0", 
 	              new ArrayList<VendorExtension>());
 	   }
+	
+	
+	 @Bean
+	  public WebMvcConfigurer corsConfigurer() {
+	    return new WebMvcConfigurerAdapter() {
+	      @Override
+	      public void addCorsMappings(CorsRegistry registry) {
+	    	  registry.addMapping("/**")
+	  		.allowedMethods("PUT", "DELETE","GET","POST")
+	  		.allowedHeaders("Content-Type", "Access-Control-Allow-Origin", "Access-Control-Allow-Headers", "Authorizationn", "requestId");
+	  		
+	      }
+	    };
+	  }
+	
 }

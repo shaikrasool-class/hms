@@ -17,6 +17,7 @@ public class DoctorDaoImpl implements DoctorDao {
 
 	@Autowired
 	private SessionFactory sf;
+	
 
 	@Override
 	public Doctor addDoctor(Doctor dr) {
@@ -82,4 +83,4 @@ public class DoctorDaoImpl implements DoctorDao {
 		return query.list();
 	}
 
-}
+ }
